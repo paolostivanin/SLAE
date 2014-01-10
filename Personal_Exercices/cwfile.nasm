@@ -17,7 +17,9 @@ _start:
 	mov eax, 4 ;syscall ssize_t write(int fd, const void *buf, size_t count)
 	mov ecx, message ;second arg of write func
 	mov edx, mlen ;third arg of write func
-	int 0x80 ;interrupt
+	int 0x80
+	mov eax, 6 ;close
+	int 0x80
 
 	mov eax, 0x1 ;syscall _exit(int status)
 	mov ebx, 0x0 ;return 0 
