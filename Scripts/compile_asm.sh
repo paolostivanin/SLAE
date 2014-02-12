@@ -1,24 +1,24 @@
 #!/bin/bash
 
-#Filename:	compile_asm.sh
 #Author:	Paolo Stivanin <www.paolostivanin.com>
-#Date:		2013 December
-#Location:	Veneto (Italy)
-#Desc:		Assembling with NASM and ld
-#Tested on:	Ubuntu 12.04/13.10 x86 and amd64
+#Tested on:	Gentoo x86/x86-64, Ubuntu 14.04 x86/amd64
+#Student ID:	526
 
-tmp=$(basename "$1")
-fl="${tmp%.*}"
-echo $fl
-
-echo "--> Assembling with NASM..."
-nasm -f elf32 -o "$fl.o" "$1"
-
-echo "--> Linking..."
-if [ $(uname -m) == "x86_64" ]; then
-	ld  -m elf_i386 -o $fl $fl.o
-else
-	ld -o $fl $fl.o
+if [ -z "$1" ];then
+	echo "Usage: $0 filename"
+	exit -1
 fi
 
-echo "--> Done"
+FILE_NO_EXT="${1%.*}"
+
+echo "[+] Assembling with NASM..."
+nasm -f elf32 -o "${FILE_NO_EXT}.o" "$1"
+
+echo "[+] Linking..."
+if [ $(uname -m) == "x86_64" ]; then
+	ld  -m elf_i386 -o ${FILE_NO_EXT} ${FILE_NO_EXT}.o
+else
+	ld -o ${FILE_NO_EXT} ${FILE_NO_EXT}.o
+fi
+
+echo "[+] Done :)"
