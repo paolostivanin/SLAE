@@ -8,5 +8,5 @@ The SecurityTube Linux Assembly Expert (SLAE) is an online course and certificat
 <br>
 This blog post has been created for completing the requirements of the SecurityTube Linux Assembly Expert cerfication:<br>
 http://www.securitytube-training.com/online-courses/securitytube-linux-assembly-expert/index.html
-<br>
+<br><br>
 Student ID: SLAE - 526
