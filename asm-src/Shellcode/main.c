@@ -1,5 +1,5 @@
 /* Template for running shellcode
- * Authour: Paolo Stivanin <https://github.com/polslinux>
+ * Author: Paolo Stivanin <https://github.com/polslinux>
  * SLAE Student ID: 526
  */
 

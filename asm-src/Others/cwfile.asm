@@ -1,5 +1,5 @@
 ;Description: 	Create and write string to a file
-;Authour: 	Paolo Stivanin <https://github.com/polslinux>
+;Author: 	Paolo Stivanin <https://github.com/polslinux>
 ;SLAE ID: 	526 
 
 global _start
