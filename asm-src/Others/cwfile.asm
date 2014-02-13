@@ -1,6 +1,6 @@
-; CWFile (Create and Write a string into a File)
-; Authour: Paolo Stivanin <www.paolostivanin.com>
-; SLAE Student ID: 526
+;Description: 	Create and write string to a file
+;Authour: 	Paolo Stivanin <https://github.com/polslinux>
+;SLAE ID: 	526 
 
 global _start
 
