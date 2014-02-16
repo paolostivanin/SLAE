@@ -28,7 +28,7 @@ _start:
 
 	mov ebx,eax	;file where to write
 	mov eax,0x4	;syscall write
-	mov ecx,buf	;where are the bytes to read
+	mov ecx,buf	;where are the bytes to write
 	mov edx,edi	;how many bytes to write
 	int 0x80
 

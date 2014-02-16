@@ -9,8 +9,6 @@ if [ -z "$1" ];then
 	exit -1
 fi
 
-echo "[+] Getting shellcode with objdump..."
+echo "[+] Shellcode:"
 
 for i in $(objdump -d $1 |grep "^ " |cut -f2); do echo -n '\x'$i; done; echo
-
-echo "[+] Done!"
