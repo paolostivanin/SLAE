@@ -1,4 +1,4 @@
-;Description: 	Create and write string to a file
+;Description: 	Create file and write a string inside it
 ;Author: 	Paolo Stivanin <https://github.com/polslinux>
 ;SLAE ID: 	526 
 

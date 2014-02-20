@@ -1,4 +1,4 @@
-;Description: 	Print an integer
+;Description: 	Print an integer in assembly language
 ;Author: 	Paolo Stivanin <https://github.com/polslinux>
 ;SLAE ID: 	526 
 
