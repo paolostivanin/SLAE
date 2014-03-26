@@ -8,17 +8,17 @@ shellcode = ("")
 
 encoded = ""
 i=1
-LEN=len(shellcode)
+LEN=len(bytearray(shellcode))
 BYTE=
 
 print 'Lenght of shellcode: %d' % len(bytearray(shellcode)) + ', encoded shellcode (nasm format):'
-for x in bytearray(shellcode):
-	y = x^BYTE
-	encoded += '0x'
-	if i < LEN:
-		encoded += '%02x,' % y
-	else:
-		encoded += '%02x' % y
-	i += 1
-	
+for x in bytearray(shellcode) :
+    encoded += '0x'
+    encoded += '%02x,' % x
+    if i < LEN:
+    	encoded += '0x%02x,' % BYTE
+    else:
+    	encoded += '0x%02x' % BYTE
+    i+=1
+
 print encoded

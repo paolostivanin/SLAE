@@ -38,8 +38,8 @@ static void split_every_four(const char *str, size_t LEN_STR){
 	char dest[LEN_STR+1];
 	int i, j=0, start_offset;
 	
-	if(LEN_STR >= 8) start_offset = 6;
-	else start_offset = LEN_STR-2;
+	if(LEN_STR >= 8) start_offset = 6; //if the length of the shellcode is greater than 8 read start from byte 6 (so reading 7,8)
+	else start_offset = LEN_STR-2; //else read start from the length-2 (so if length is 7 read start from 5 (so reading 6,7))
 	
 	int end_offset = 0;
 	
@@ -51,8 +51,8 @@ static void split_every_four(const char *str, size_t LEN_STR){
 		}
 		if((LEN_STR-8) >= 8) start_offset += 8;
 		else{
-			if((LEN_STR-8) <= 0) break;
-			else start_offset += LEN_STR-8;
+			if((LEN_STR-8) <= 0) break; //if shellcode length is lesser than 8 we have finished
+			else start_offset += LEN_STR-8; //else we start read from the remaining bytes
 			}
 		
 		end_offset += 8;

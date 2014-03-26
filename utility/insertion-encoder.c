@@ -16,17 +16,20 @@
 #define LEN 25 //this is the lenght of the shellcode
 
 int main(void){
-	int i;
-	uint8_t encByte = {0xAA}; //this is the byte using to encode the shellcode
+	int i, j=0;
+	uint8_t insertByte = {0xAA}; //this is the byte using to encode the shellcode
 	int sc[] = {};
-	int encoded_sc[LEN];
+	int encoded_sc[LEN*2];
 	
-	for(i=0;i<LEN;i++){
-		encoded_sc[i] = sc[i]^encByte;
+	for(i=0; i<LEN*2; i++){
+		encoded_sc[i] = sc[j];
+		encoded_sc[i+1] = insertByte;
+		i++;
+		j++;
 	}
 
-	for(i=0; i<LEN; i++){
-		if(i == LEN-1) printf("0x%02x", encoded_sc[i]);
+	for(i=0; i<LEN*2; i++){
+		if(i==(LEN*2)-1) printf("0x%02x", encoded_sc[i]);
 		else printf("0x%02x,", encoded_sc[i]);
 	}
 	printf("\n");
