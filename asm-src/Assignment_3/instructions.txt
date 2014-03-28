@@ -1,0 +1,3 @@
+Assignment #3, Egg_Hunter:
+	* create a working demo of the Egghunter
+	* should be configurable for different payloads

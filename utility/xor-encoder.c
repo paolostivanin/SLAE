@@ -13,7 +13,7 @@
  * echo SHELLCODE-FORMAT-OBJDUMP |sed 's/x//g'| sed 's/\(..\)/0x\1,/g'
  */
 
-#define LEN 25 //this is the lenght of the shellcode
+#define LEN  //this is the lenght of the shellcode
 
 int main(void){
 	int i;

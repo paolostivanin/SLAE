@@ -1,0 +1,4 @@
+Assignment #1, Shell_Bind_TCP:
+	* binds to a port
+	* execs shell on incoming connection
+	* port number should be easily configurable

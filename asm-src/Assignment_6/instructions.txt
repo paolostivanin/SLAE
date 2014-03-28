@@ -1,0 +1,4 @@
+Assignment #6, Polymorphic_Shellcode:
+	* Take up 3 shellcodes from shell-storm and create polymorphic versions of them
+	* The poly-version CANNOT be larger than 150% of existing one
+	* Bonus point for making it shorter than original
