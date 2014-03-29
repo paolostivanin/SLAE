@@ -1,8 +1,7 @@
 #!/bin/bash
 
-#Author:        Paolo Stivanin <https://github.com/polslinux>
-#Tested on:     Gentoo x86/x86-64, Ubuntu 14.04 x86/amd64
-#SLAE ID: 	526
+#Author:	Paolo Stivanin <https://github.com/polslinux>
+#SLAE ID:	526
 
 if [ -z "$1" ];then
 	echo "Usage: $0 filename"
