@@ -1,6 +1,3 @@
-Assignment #2, Shell_Reverse_TCP:
-
-
 Assignment #2: Revere Bind TCP Shell:
 =====================================
 
