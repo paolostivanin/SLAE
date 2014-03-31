@@ -1,3 +1,0 @@
-Assignment #4, Custom_Encoding_Schema :
-	* create custom encoding scheme like "insertion encoded"
-	* PoC using execve-stack as the shellcode to encode with your schema and execute

@@ -1,5 +1,5 @@
-Assignment #2: Revere Bind TCP Shell:
-=====================================
+Assignment #2: Revere Bind TCP Shell
+====================================
 
 Instructions:
 -------------

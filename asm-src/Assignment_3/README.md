@@ -1,5 +1,5 @@
-Assignment #3: EggHunter:
-=========================
+Assignment #3: EggHunter
+========================
 
 Instructions:
 -------------
