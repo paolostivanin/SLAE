@@ -10,4 +10,4 @@ PoC:
 ----
 1. The original shellcode will be reversed;
 2. The reversed shellcode will be splitted in first_half and second_half;
-3. The final encoded code will be: INSERTION(VALUE,XOR([second_half][first_half]))
+3. The final encoded shellcode will be: `INSERTION(VALUE,XOR([second_half][first_half]))`
