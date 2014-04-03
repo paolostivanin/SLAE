@@ -8,7 +8,7 @@ section .text
 _start:
 	;socket(): sys_socketcall(int call, unsigned long *args)
 	;eax -> sys_socketcall
-	;ebx -> SYS_{SOCKET(1),BIND(2),CONNECT(3),LISTEN(4),ACCEPT(5),...}
+	;ebx -> SYS_{SOCKET(1),BIND(2),CONNECT(3),LISTEN(4),ACCEPT(5) /usr/include/linux/net.h}
 	;ecx -> args(AF_INET{/usr/include/bits/socket.h -> 2}, SOCK_STREAM{/usr/include/bits/socket_type.h -> 1}, 0)
 	xor edx,edx
 	xor ebx,ebx
@@ -25,7 +25,7 @@ _start:
 	;bind(): sys_socketcall(int call, unsigned long *args)
 	;eax -> sys_socketcall
 	;ebx -> SYS_BIND
-	;ecx -> args(sockfd{esi}, {sin_addr{0},sin_port,sin_family{2}}, socklen_t addrlen{16 bytes})
+	;ecx -> args(sockfd{esi}, {sa_family{2},sin_port{7500},sin_addr{0.0.0.0}}, socklen_t addrlen{16 bytes})
 	mov BYTE al,0x66
 	inc ebx			;SYS_BIND
 	push edx
