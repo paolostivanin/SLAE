@@ -1,3 +1,8 @@
+/* Reverse an input shellcode
+ * Author: Paolo Stivanin <https://github.com/polslinux>
+ * SLAE Student ID: 526
+ */
+
 #include <stdio.h>
 #include <stdint.h>
 
