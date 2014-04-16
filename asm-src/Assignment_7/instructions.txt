@@ -1,4 +1,0 @@
-Assignment #7, Custom_Encrypter:
-	* create a custom crypter like the one shown in "crypters" video
-	* free to use any existing encryption schema
-	* can use any programming language
