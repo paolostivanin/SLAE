@@ -26,7 +26,7 @@ _start:
 	int 0x80 ;interrupt
 
 section .data
-	filename: db "file.txt",0 ;the filename *must* be null-terminated
-	message: db "This is a string written to a file",0x0a
+	filename: db "ex1.txt",0 ;the filename *must* be null-terminated
+	message: db "Hello SecurityTube :)",0x0a
 	mlen: equ $-message
 
